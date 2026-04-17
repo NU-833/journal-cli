@@ -33,7 +33,7 @@ func (m model) View() tea.View {
 }
 
 func main() {
-	tea.NewProgram(model{})
+	p := tea.NewProgram(model{})
 	if _, err := p.Run(); err != nil {
 		fmt.Printf("There has been an error: %v", err)
 		os.Exit(1)
