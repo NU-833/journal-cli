@@ -31,3 +31,11 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 func (m model) View() tea.View {
 	return tea.NewView(m.text)
 }
+
+func main() {
+	tea.NewProgram(model{})
+	if _, err := p.Run(); err != nil {
+		fmt.Printf("There has been an error: %v", err)
+		os.Exit(1)
+	}
+}
