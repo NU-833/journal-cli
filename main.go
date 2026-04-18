@@ -35,6 +35,8 @@ func (m model) View() tea.View {
 }
 
 func main() {
+	now := time.Now()
+	fmt.Printf("%v %v %v %v %v:%v:%v\n", now.Weekday().String(), now.Day(), now.Month().String(), now.Year(), now.Hour(), now.Minute(), now.Second())
 	p := tea.NewProgram(model{})
 	if _, err := p.Run(); err != nil {
 		fmt.Printf("There has been an error: %v", err)
