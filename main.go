@@ -31,6 +31,7 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (m model) View() tea.View {
 	s := "> " + m.text
+	s += fmt.Sprintf("\nPress [enter] to end typing...")
 	return tea.NewView(s)
 }
 
