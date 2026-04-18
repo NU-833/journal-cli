@@ -29,7 +29,8 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m model) View() tea.View {
-	return tea.NewView(m.text)
+	s := "> " + m.text
+	return tea.NewView(s)
 }
 
 func main() {
