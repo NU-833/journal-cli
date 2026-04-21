@@ -45,7 +45,10 @@ func main() {
 		fmt.Printf("There has been an error: %v", err)
 		os.Exit(1)
 	}
-	_, err = os.Create("test.txt")
+	_, offset := now.Zone()
+	hour, min := offset / 3600, offset % 3600
+	file_name := fmt.Sprintf("%04d-%02d-%02dT%02d:%02d:%02d%+03d:%02d", now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second(), hour, min)
+	_, err = os.Create(file_name)
 	if err != nil {
 		fmt.Printf("There has been an error: %v", err)
 		os.Exit(1)
