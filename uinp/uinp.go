@@ -8,7 +8,7 @@ import (
 )
 
 type Model struct {
-	text	string
+	Text	string
 }
 
 func (m Model) Init() tea.Cmd {
@@ -20,7 +20,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case tea.KeyPressMsg:
 		switch {
 		case msg.Text != "":
-			m.text += msg.Text
+			m.Text += msg.Text
 		case msg.Code == tea.KeyEnter:
 			return m, tea.Quit
 		}
@@ -29,7 +29,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m Model) View() tea.View {
-	s := fmt.Sprintf("> %v\n", m.text)
+	s := fmt.Sprintf("> %v\n", m.Text)
 	s += fmt.Sprintf("\nPress [enter] to end typing...")
 	return tea.NewView(s)
 }
