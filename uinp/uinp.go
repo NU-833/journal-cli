@@ -21,7 +21,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		switch {
 		case msg.Text != "":
 			m.Text += msg.Text
-		case msg.Code == tea.KeyEnter:
+		case msg.Code == tea.KeyEsc:
 			return m, tea.Quit
 		}
 	}
